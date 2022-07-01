@@ -5,12 +5,12 @@ function writePassword() {
 }
 
 function generatePassword() {
-  criteria = getCriteria();
-  console.log(criteria);
-
+  criteriaArray = generateCriteriaArray();
+  
   return "hola";
 }
 
+// Get the criteria from user
 function getCriteria() {
   criteria = [];
   do {
@@ -27,12 +27,46 @@ function getCriteria() {
     criteria[2] = window.confirm("Do you want it to include uppercases?");
     criteria[3] = window.confirm("Do you want it to include numbers?");
     criteria[4] = window.confirm("Do you want it to include special characters?");
-    if(criteria[1] == false && criteria[2] == false && criteria[3] == false && criteria[4] == false){
+    if (criteria[1] == false && criteria[2] == false && criteria[3] == false && criteria[4] == false) {
       window.alert("Please select one criteria");
     }
-  } while(criteria[1] == false && criteria[2] == false && criteria[3] == false && criteria[4] == false);
+  } while (criteria[1] == false && criteria[2] == false && criteria[3] == false && criteria[4] == false);
 
   return criteria;
+}
+
+// Generates random number that also match criteria
+function generateCriteriaArray() {
+  criteria = getCriteria();
+  outputArray = [];
+  do {
+    loopArray = [];
+    repeat = false;
+
+    for (i = 0; i < criteria[0]; i++) {
+      randomCriteria = 0
+      do {
+        randomNumber = Math.floor(Math.random() * 4) + 1;
+        randomCriteria = randomNumber;
+      } while (!criteria[randomNumber]);
+
+      loopArray.push(randomCriteria);
+    }
+
+    for (j = 1; j <= 4; j++) {
+      if (criteria[j]) {
+        if (!loopArray.includes(j)) {
+          repeat = true;
+        }
+      }
+    }
+
+    if (!repeat) {
+      outputArray = loopArray;
+    }
+  } while (repeat);
+
+  return outputArray;
 }
 
 // Add event listener to generate button
