@@ -4,10 +4,33 @@ function writePassword() {
   document.querySelector("#password").value = password;
 }
 
+//Calls a function then generates random password
 function generatePassword() {
   criteriaArray = generateCriteriaArray();
-  
-  return "hola";
+  password = '';
+
+  for (i = 0; i < criteriaArray.length; i++) {
+    switch (criteriaArray[i]) {
+      case 1:
+        randomLowercase = "abcdefghijklmnopqrstuvwxyz";
+        password += randomLowercase.charAt(Math.floor(Math.random()*randomLowercase.length));
+        break;
+      case 2:
+        randomUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        password += randomUppercase.charAt(Math.floor(Math.random()*randomUppercase.length));
+        break;
+      case 3:
+        randomNumber = "0123456789";
+        password += randomNumber.charAt(Math.floor(Math.random()*randomNumber.length));
+        break;
+      case 4:
+        randomSpecialCharacter = "~!@#$%^&*()_+-=[]\\{}|;':\",./<>? ";
+        password += randomSpecialCharacter.charAt(Math.floor(Math.random()*randomSpecialCharacter.length));
+        break;
+    }
+  }
+
+  return password;
 }
 
 // Get the criteria from user
