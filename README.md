@@ -7,7 +7,7 @@ This web application will help you generate a random password that has as many c
 * [Preview](#Preview)
 * [Link](#Link)
 * [License](#License)
-* [Contributin](#Contributing)
+* [Contributing](#Contributing)
 * [Questions](#Questions)
 
 ## Preview
