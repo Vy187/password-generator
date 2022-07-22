@@ -11,8 +11,7 @@ This web application will help you generate a random password that has as many c
 * [Questions](#Questions)
 
 ## Preview
-![Render](./assets/images/Preview-1.png)
-![Render](./assets/images/Preview-2.png)
+![Render](./assets/demo/demo.gif)
 
 ## Link
 [Password Generator Link](https://vy187.github.io/password-generator/)
