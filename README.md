@@ -14,7 +14,7 @@ This web application will help you generate a random password that has as many c
 ![Render](./assets/demo/demo.gif)
 
 ## Link
-[Password Generator Link](https://vy187.github.io/password-generator/)
+[Password Generator](https://vy187.github.io/password-generator/)
 
 ## License
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
